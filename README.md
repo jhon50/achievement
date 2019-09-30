@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple achievement system implementation.
 
-Things you may want to cover:
+As a user gets new points by killing monsters, deaths or collectig coins new achievements are unlocked.
 
-* Ruby version
+There are 5 achievements per category, unlock them so you can see!
 
-* System dependencies
+At this moment you can only perform tests on rails console.
 
-* Configuration
+## Simple Test Example
 
-* Database creation
+`rails c`
 
-* Database initialization
+`User.create!`
 
-* How to run the test suite
+`CollectedCoin.create(user: User.first, value: 100)` as value being the amount of coins earned.
 
-* Services (job queues, cache servers, search engines, etc.)
+`Death.create(user: User.first)`
 
-* Deployment instructions
+## Monster Killing
 
-* ...
+still in console:
+
+`Monster.create(name: 'turtle')`
+
+`KilledMonster.create(user: User.first, monster: Monster.first)`
+
+##
+
+PS: Errors may exist, this was written late at night.
